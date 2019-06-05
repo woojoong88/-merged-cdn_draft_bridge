@@ -24,13 +24,13 @@ spec:
   type: NodePort
   ports:
   - name: httpui
-    protocol: TCP
     port: {{ .Values.antmedia.ports.httpui }}
     nodePort: {{ .Values.antmedia.ports.httpui_np }}
-  - name: rtmp
     protocol: TCP
+  - name: rtmp
     port: {{ .Values.antmedia.ports.rtmp }}
     nodePort: {{ .Values.antmedia.ports.rtmp_np }}
+    protocol: TCP
 
 ---
 apiVersion: apps/v1
