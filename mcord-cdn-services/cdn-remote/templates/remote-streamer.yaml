@@ -67,17 +67,7 @@ spec:
         command: [ "bash",  "-xc"]
         args:
         - sed -i 's/geteuid/getppid/' /usr/bin/vlc;
-          /opt/start-remote-stream.sh
         resources:
           limits:
             cpu: {{ .Values.remote_streaming.resources.cpu }}
             memory: {{ .Values.remote_streaming.resources.mem }}
-        volumeMounts:
-        - name: start-script
-          mountPath: /opt/start-remote-stream.sh
-          subPath: start-remote-stream.sh
-      volumes:
-      - name: start-script
-        configMap:
-          name: start-remote-stream
-          defaultMode: 493
