@@ -38,8 +38,8 @@ antmedia:
   ports:
     httpui: 5080
     httpui_np: 32080
-    rtmp: 32935
-    rtmp_np: 32935
+    rtmp: 1935
+    rtmp_np: 30935
   replicas: 1
   resources:
     cpu: 3
