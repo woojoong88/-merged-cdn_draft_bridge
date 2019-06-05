@@ -45,29 +45,29 @@ spec:
   selector:
     matchLabels:
       app: antmedia
-    serviceName: "antmedia"
-    template:
-      metadata:
-        labels:
-          app: antmedia
-          name: antmedia
-      spec:
-        terminationGracePeriodSeconds: 1
-        nodeSelector:
-          kubernetes.io/hostname: {{ .Values.cdn_node_selector }}
-        containers:
-          - name: antmedia
-            image: {{ .Values.antmedia.images.antmedia_image }}
-            imagePullPolicy: IfNotPresent
-            ports:
-              - containerPort: {{ .Values.antmedia.ports.httpui }}
-              - containerPort: {{ .Values.antmedia.ports.rtmp }}
-            stdin: true
-            tty: true
-            command: [ "bash",  "-xc"]
-            args:
-              - cd /usr/local/antmedia && ./start.sh | tee /opt/start.log
-            resources:
-              limits:
-                cpu: {{ .Values.antmedia.resources.cpu }}
-                memory: {{ .Values.antmedia.resources.mem }}
+  serviceName: "antmedia"
+  template:
+    metadata:
+      labels:
+        app: antmedia
+        name: antmedia
+    spec:
+      terminationGracePeriodSeconds: 1
+      nodeSelector:
+        kubernetes.io/hostname: {{ .Values.cdn_node_selector }}
+      containers:
+      - name: antmedia
+        image: {{ .Values.antmedia.images.antmedia_image }}
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: {{ .Values.antmedia.ports.httpui }}
+          - containerPort: {{ .Values.antmedia.ports.rtmp }}
+        stdin: true
+        tty: true
+        command: [ "bash",  "-xc"]
+        args:
+          - cd /usr/local/antmedia && ./start.sh | tee /opt/start.log
+        resources:
+          limits:
+            cpu: {{ .Values.antmedia.resources.cpu }}
+            memory: {{ .Values.antmedia.resources.mem }}
