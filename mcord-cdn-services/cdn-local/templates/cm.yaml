@@ -68,7 +68,7 @@ data:
             chunk_size 4000;
             application r {
                live on;
-               pull rtmp://{{ .Values.remote_ip }}:1935/live;
+               pull rtmp://{{ .Values.remote_ip }}:30935/LiveApp/ant;
             }
             application l {
                play /opt/cdn/movies;
