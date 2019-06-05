@@ -21,4 +21,4 @@ metadata:
 data:
   start-remote-stream.sh: |+
     #!/bin/bash
-    while true; do ffmpeg -re -i /opt/cdn/movies/{{ .Values.remote_streaming.video_quality }}.mp4 -c copy -f flv rtmp://{{ .Values.remote_streaming.antmedia_ip }}:30935/LiveApp/ant; done
+    while true; do ffmpeg -re -i /opt/cdn/movies/{{ .Values.remote_streaming.video_quality }}.mp4 -c copy -f flv rtmp://{{ .Values.remote_streaming.antmedia_ip }}:30935/LiveApp/1.stream; done
