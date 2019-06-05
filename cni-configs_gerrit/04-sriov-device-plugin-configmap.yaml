@@ -84,7 +84,7 @@ data:
       [
         {
           "resourceName": "sriov",
-          "rootDevices": ["04:00.0"],
+          "rootDevices": ["5e:00.0"],
           "sriovMode": true,
           "deviceType": "netdevice"
         }
