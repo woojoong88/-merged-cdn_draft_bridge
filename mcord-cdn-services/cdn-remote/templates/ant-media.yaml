@@ -23,14 +23,14 @@ spec:
     app: antmedia
   type: NodePort
   ports:
-    - name: http-ui
-      protocol: TCP
-      port: {{ .Values.antmedia.ports.httpui }}
-      nodePort: {{ .Values.antmedia.ports.httpui_np }}
-    - name: rmpt-port
-      protocol: TCP
-      port: {{ .Values.antmedia.ports.rtmp }}
-      nodePort: {{ .Values.antmedia.ports.rtmp_np }}
+  - name: http-ui
+    protocol: TCP
+    port: {{ .Values.antmedia.ports.httpui }}
+    nodePort: {{ .Values.antmedia.ports.httpui_np }}
+  - name: rmpt-port
+    protocol: TCP
+    port: {{ .Values.antmedia.ports.rtmp }}
+    nodePort: {{ .Values.antmedia.ports.rtmp_np }}
 
 ---
 apiVersion: apps/v1
@@ -60,8 +60,8 @@ spec:
         image: {{ .Values.antmedia.images.antmedia_image }}
         imagePullPolicy: IfNotPresent
         ports:
-          - containerPort: {{ .Values.antmedia.ports.httpui }}
-          - containerPort: {{ .Values.antmedia.ports.rtmp }}
+        - containerPort: {{ .Values.antmedia.ports.httpui }}
+        - containerPort: {{ .Values.antmedia.ports.rtmp }}
         stdin: true
         tty: true
         command: [ "bash",  "-xc"]
