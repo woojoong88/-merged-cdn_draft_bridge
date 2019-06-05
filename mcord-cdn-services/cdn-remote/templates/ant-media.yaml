@@ -23,11 +23,11 @@ spec:
     app: antmedia
   type: NodePort
   ports:
-  - name: http-ui
+  - name: httpui
     protocol: TCP
     port: {{ .Values.antmedia.ports.httpui }}
     nodePort: {{ .Values.antmedia.ports.httpui_np }}
-  - name: rmpt-port
+  - name: rtmp
     protocol: TCP
     port: {{ .Values.antmedia.ports.rtmp }}
     nodePort: {{ .Values.antmedia.ports.rtmp_np }}
