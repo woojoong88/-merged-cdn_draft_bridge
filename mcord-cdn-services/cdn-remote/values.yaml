@@ -31,3 +31,16 @@ remote_streaming:
   resources:
     cpu: 3
     mem: "1Gi"
+
+antmedia:
+  images:
+    antmedia_image: "woojoong/antmedia:1.7.0"
+  ports:
+    httpui: 5080
+    httpui_np: 32080
+    rtmp: 32935
+    rtmp_np: 32935
+  replicas: 1
+  resources:
+    cpu: 3
+    mem: "1Gi"
