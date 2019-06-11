@@ -20,7 +20,7 @@ stream_name: 1.stream
 
 remote_streaming:
   video_quality: 360
-  antmedia_ip: node2
+  antmedia_ip: 10.90.0.132
   images:
     remote_streaming_image: "woojoong/mwc-cdn:remote-v3"
   ports:
